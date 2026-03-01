@@ -67,7 +67,7 @@ static void dma_seq_stop(struct seq_file *s, void *v) {}
 static int dma_seq_show(struct seq_file *s, void *v) {
     u32 *data = (u32 *)v;
     loff_t idx = data - (u32 *)edev->dma.region;
-    seq_printf(s, "[%04lx]: 0x%08x\n", idx, *data);
+    seq_printf(s, "[%04llx]: 0x%08x\n", idx, *data);
     return 0;
 }
 
@@ -91,8 +91,10 @@ static const struct proc_ops dma_proc_ops = {
 
 static int edev_probe(struct pci_dev *pdev, const struct pci_device_id *ent) {
     int err;
-    struct device *dev = &pdev->dev;
+    int i;
+    u32 *dma_ptr;
     u64 value;
+    struct device *dev = &pdev->dev;
 
     dev_info(dev, "Vendor - 0x%04x", pdev->vendor);
     dev_info(dev, "Device - 0x%04x", pdev->device);
@@ -138,8 +140,8 @@ static int edev_probe(struct pci_dev *pdev, const struct pci_device_id *ent) {
         goto unmap_bar;
     }
 
-    u32 *dma_ptr = (u32 *)edev->dma.region;
-    for (int i = 0; i < (edev->dma.size / 4); i++) {
+    dma_ptr = (u32 *)edev->dma.region;
+    for (i = 0; i < (edev->dma.size / 4); i++) {
         dma_ptr[i] = 0xCAFE0000 | i;
     }
 
