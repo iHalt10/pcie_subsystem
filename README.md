@@ -24,7 +24,7 @@ This project provides a comprehensive PCIe subsystem implementation that enables
 
 ## Requirements
 
-- AMD Xilinx Vivado 2023.1 or later
+- AMD Xilinx Vivado 2024.1.x or later
 - UltraScale+ FPGA device
 - pcie4c_uscale_plus ip (included in Vivado)
 
@@ -32,3 +32,8 @@ This project provides a comprehensive PCIe subsystem implementation that enables
 - AMD Alveo U50, U250, U280, etc ...
 - Other UltraScale+ FPGAs with PCIe Gen3/Gen4 support
 - Sample: Alveo U50
+
+- Tested:
+    - Alveo: U50
+    - Vivado: 2024.1.x and 2024.2.x
+    - OS: Ubuntu 22.04 (kernel 5.15)
