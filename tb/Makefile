@@ -2,7 +2,7 @@
 # Universal PCIe Subsystem Verification
 # ==========================================
 
-# Auto-detect OS to fix macOS Apple Silicon/Intel archiver clashes
+
 UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S),Darwin)
     AR_OVERRIDE = AR=/usr/bin/ar RANLIB=/usr/bin/ranlib CXX=clang++ LINK=clang++
@@ -18,7 +18,7 @@ PKG_BASE = ../rtl/pcie_subsystem/packages/pcie_pkg.sv
 
 .PHONY: all clean test_cq test_rc
 
-all: test_cq test_rc test_cc
+all: test_cq test_rc test_router
 
 test_cq:
 	@echo ">>> Building and Running CQ Parser Testbench..."
