@@ -1,0 +1,2 @@
+"tb_rc_parser rtl/pcie_subsystem/packages/pcie_pkg.sv rtl/pcie_subsystem/packages/pcie_rc_pkg.sv rtl/pcie_subsystem/internal/dma_reader/rc_parser.sv tb/verilator/tb_rc_parser.sv" 
+tb_rc_parser rtl/pcie_subsystem/packages/pcie_pkg.sv rtl/pcie_subsystem/packages/pcie_rc_pkg.sv rtl/pcie_subsystem/internal/dma_reader/rc_parser.sv tb/verilator/tb_rc_parser.sv 
