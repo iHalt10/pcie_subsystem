@@ -94,13 +94,13 @@ module rc_receiver #(
         rc_short_tlp <= rc_tlp_0[1];
         rc_short_tlp_received <= 1'b1;
       end else if (rc_tlp_received_1) begin
-        rc_short_tlp = {'0, rc_tlp_1[1]};
+        rc_short_tlp <= {'0, rc_tlp_1[1]};
         rc_short_tlp_received <= 1'b1;
       end else if (rc_tlp_received_2) begin
-        rc_short_tlp = {'0, rc_tlp_2[1]};
+        rc_short_tlp <= {'0, rc_tlp_2[1]};
         rc_short_tlp_received <= 1'b1;
       end else if (rc_tlp_received_3) begin
-        rc_short_tlp = {'0, rc_tlp_3[1]};
+        rc_short_tlp <= {'0, rc_tlp_3[1]};
         rc_short_tlp_received <= 1'b1;
       end else begin
         rc_short_tlp <= '0;
